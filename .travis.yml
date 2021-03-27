@@ -1,20 +1,27 @@
 language: python
-os: linux
 jobs:
   include:
    # Ubuntu 16.04 LTS (Xenial)
     - dist: xenial
       python: 3.5
+      os: linux
    # Ubuntu 18.04 LTS (Bionic)
     - dist: bionic
       python: 3.6
+      os: linux
     - dist: bionic
       python: 3.7
+      os: linux
    # Ubuntu 20.04 LTS (Focal)
     - dist: focal
       python: 3.8
+      os: linux
     - dist: focal
       python: 3.9
+      os: linux
+   # Mac OS
+    - os: macos
+      python: 3.8
 cache: pip
 before_install:
   - python --version # show Python version
