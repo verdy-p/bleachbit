@@ -3,6 +3,7 @@ jobs:
   include:
    # Mac OS
     - os: macos
+      language: shell
 cache: pip
 before_install:
   - python --version # show Python version
