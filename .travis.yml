@@ -11,7 +11,6 @@ jobs:
 before_install:
   - export PY=python3
   - export PIP=pip3
-  - choco install python --version 3.8.8
   - $PY --version # show Python version
   - $PIP install -U pip # update pip itself
   - export VIRT_ROOT=/home/travis/virtualenv/python$TRAVIS_PYTHON_VERSION
