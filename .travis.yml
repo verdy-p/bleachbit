@@ -1,4 +1,8 @@
 language: python
+addons:
+  homebrew:
+    packages:
+      gobject-introspection
 jobs:
   include:
    # Mac OS
@@ -7,13 +11,13 @@ jobs:
 before_install:
   - export PY=python3
   - export PIP=pip3
+  - choco install python --version 3.8.8
   - $PY --version # show Python version
   - $PIP install -U pip # update pip itself
   - export VIRT_ROOT=/home/travis/virtualenv/python$TRAVIS_PYTHON_VERSION
   - export PKG_CONFIG_PATH=$VIRT_ROOT/lib/pkgconfig
 install:
  # - sudo apt-get install gir1.2-gtk-3.0 gir1.2-notify-0.7 libgirepository1.0-dev libxml2-utils
-  - brew install gobject-introspection
   - $PIP install PyGObject
 # coveralls.io
   - $PIP install coveralls requests[security]
