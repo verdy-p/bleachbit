@@ -37,8 +37,8 @@
     <label>Backup files</label>
     <description>Delete the backup files</description>
     <warning>Inspect the preview for any files you want to keep.</warning>
-    <action command="delete" search="deep" regex="\.[Bb][Aa][Kk]$"/>
-    <action command="delete" search="deep" regex="[a-zA-Z]{1,4}~$"/>
+    <warning>This option is slow.</warning>
+    <action command="delete" search="deep" regex="^[^\.](\.[Bb][Aa][Kk]|.*[a-zA-Z0-9]~)$"/>
   </option>
   <option id="ds_store">
     <label translate="false">.DS_Store</label>
@@ -50,8 +50,7 @@
     <label translate="false">Thumbs.db</label>
     <description>Delete the files</description>
     <warning>This option is slow.</warning>
-    <action command="delete" search="deep" regex="^Thumbs\.db$"/>
-    <action command="delete" search="deep" regex="^Thumbs\.db:encryptable$"/>
+    <action command="delete" search="deep" regex="^Thumbs\.db(:encyptable)?$"/>
   </option>
   <option id="tmp">
     <label>Temporary files</label>
@@ -79,7 +78,6 @@ times is small.
 
 Be careful not to match files such as ~/.htpasswd
 https://github.com/bleachbit/bleachbit/issues/683
-
 -->
     <action command="delete" search="deep" regex="^.*\.sw[nop]$"/>
   </option>
